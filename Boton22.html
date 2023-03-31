@@ -1,0 +1,24 @@
+ <div style="text-align: center;">
+<img src="C:\Users\Yaird\Desktop\Logos de Velez Investment\logointro-237x220 - copia.png">
+<div style="text-align: center;">
+<div id="paypal-button-container-P-05391153JP065364BMQTQR7A"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AdKpHg5uSGML1VLKG20rFZMwzRgvKmB5dB4L7DAQ2ip98QfMjthbE7xuon0gBOSzGekGLzlLzz2e4R-M&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-05391153JP065364BMQTQR7A'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-05391153JP065364BMQTQR7A'); // Renders the PayPal button
+</script>
